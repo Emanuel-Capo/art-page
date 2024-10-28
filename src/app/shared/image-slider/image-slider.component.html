@@ -1,0 +1,45 @@
+<div
+  [@slideToggle]="selectedImage()"
+  class="h-full grid overflow-hidden place-items-center bg-[#91a8d5]">
+  @switch(selectedImage()) {
+    @case(0) {
+      <div class="img">
+        <img srcset="/assets/trab.3.png, /assets/trab.3m.png 640w" src="/assets/trab.3.png" alt="" />
+        <div id="text" class="text-white z-10 font-semibold top-1/2 absolute block w-[calc(100vw-50px)] md:w-[700px] left-[20px] md:left-1/4 ">
+          <h3 class="text-xl md:text-2xl">Abogados especializados en</h3>
+          <h1 class="text-4xl md:text-6xl mb-2" >Accidentes de trabajo</h1>
+          <p>Te ayudamos a reclamar a la ART la indemnización que te corresponde</p>
+          <p>
+            <button class="text-white bg-[#5193a7] hover:bg-blue font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 my-2"><a routerLink="accidents">Ver Más</a></button>
+          </p>
+        </div>
+      </div>
+    }
+    @case(1) {<div class="img"> <img srcset="/assets/trab.4.png, /assets/trab.4m.png 640w" src="/assets/trab.4.png" alt="" /><div id="text" class="text-white z-10 font-semibold top-1/2 absolute block w-[calc(100vw-50px)]  md:w-[700px] left-[20px] md:left-1/4 ">
+      <h3 class="text-xl md:text-2xl">Abogados especializados en</h3>
+      <h1 class="text-4xl md:text-6xl mb-2" >Despidos</h1>
+      <p>Te ayudamos a cobrar tu indemnización por despido</p>
+      <p>
+        <button class="text-white bg-[#5193a7] hover:bg-blue font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 my-2"><a routerLink="fired">Ver Más</a></button>
+      </p>
+    </div></div>}
+    @case(2) {<div class="img"> <img srcset="/assets/jub.png, /assets/jubm.png 640w" src="/assets/jub.png" alt="" />
+      <div id="text" class="text-white z-10 font-semibold top-1/2 absolute block w-[calc(100vw-50px)]  md:w-[700px] left-[20px] md:left-1/4 ">
+      <h3 class="text-xl md:text-2xl">Abogados especializados en</h3>
+      <h1 class="text-4xl md:text-6xl mb-2" >Derecho previsional</h1>
+      <p>Gestionamos tu jubilación o pensión que te corresponde</p>
+      <p>
+        <button class="text-white bg-[#5193a7] hover:bg-blue font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 my-2"><a routerLink="pension">Ver Más</a></button>
+      </p>
+    </div></div>}
+    @case(3) {<div class="img"> <img srcset="/assets/accid.png, /assets/accidm.png 640w" src="/assets/accid.png" alt="" /><div id="text" class="text-white z-10 font-semibold top-1/2 absolute block w-[calc(100vw-50px)]  md:w-[700px] left-[20px] md:left-1/4 ">
+      <h3 class="text-xl md:text-2xl">Abogados especializados en</h3>
+      <h1 class="text-4xl md:text-6xl mb-2" >Responsabilidad Civil</h1>
+      <p>Te ayudamos a reclamar la indemnización que te corresponde</p>
+      <p>
+        <button class="text-white bg-[#5193a7] hover:bg-blue font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 my-2"><a routerLink="trafficAcc">Ver Más</a></button>
+      </p>
+    </div></div>}
+  }
+</div>
+

@@ -1,0 +1,47 @@
+
+
+<nav class="bg-[#ccc] w-full z-50 top-0 start-0 absolute ">
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <a routerLink="" routerLinkActive="router-link-active"  class="flex items-center space-x-3  rtl:space-x-reverse">
+      <img src="./assets/logo2.png" class="h-20 ml-6" alt="">
+    </a>
+    @if (mobile) {
+
+      <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+        <button (click)="closed()" data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-sticky" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="#2c4d6e" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+          </svg>
+        </button>
+      </div>
+    }
+  @if(!mobile || !close() ){
+    <div [@openClose]="close()" class="items-center justify-between w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+      <ul class="backdrop-blur-md w-52 md:w-full text-end right-0 absolute z-50 md:relative flex flex-col p-4 md:p-0 mt-4 font-semibold border-2 border-blue rounded-lg bg-[#ccc] md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
+        <!-- <li>
+          <a (click)="closed()" routerLink="about" class="block my-2 mx-3 text-[#2c4d6e] text-2xl hover:text-gray md:p-0 ">Nosotros</a>
+        </li> -->
+        <li >
+          <a (click)="closedEspMenu()" class="block my-2 mx-3 text-[#2c4d6e] text-2xl hover:text-gray md:p-0 cursor-pointer">Especialización</a>
+          @if (!espMenu()) {
+            <div [@openClose]="espMenu()">
+              <ul class="backdrop-blur-md w-64 text-end right-0 md:right-[150px] absolute z-[60] flex flex-col p-2 mt-2 font-semibold border-2 border-blue rounded-lg bg-[#ccc] rtl:space-x-reverse ">
+                <li><a (click)="closedAll()" routerLink="accidents" class="block my-1 mx-2 text-[#2c4d6e] text-lg hover:text-gray md:p-0 ">ACCIDENTES DE TRABAJO</a></li>
+                <li><a (click)="closedAll()" routerLink="fired" class="block my-1 mx-2 text-[#2c4d6e] text-lg hover:text-gray md:p-0 ">DESPIDOS</a></li>
+                <li><a (click)="closedAll()" routerLink="pension" class="block my-1 mx-2 text-[#2c4d6e] text-lg hover:text-gray md:p-0 ">DERECHO PREVISIONAL</a></li>
+                <li><a (click)="closedAll()" routerLink="trafficAcc" class="block my-1 mx-2 text-[#2c4d6e] text-lg hover:text-gray md:p-0 ">RESPONSABILIDAD CIVIL</a></li>
+              </ul>
+            </div>
+          }
+        </li>
+        <li>
+          <a (click)="closed()" routerLink="contact" class="block my-2 mx-3 text-[#2c4d6e] text-2xl hover:text-gray md:p-0 ">Contacto</a>
+        </li>
+      </ul>
+    </div>
+  }
+  </div>
+</nav>
+
+
